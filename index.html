@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ジュージャン肩代わり券</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; margin: 0; background: #111; color: #fff; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 16px; }
+    img { width: 100%; border-radius: 12px; }
+    button { margin-top: 12px; padding: 12px; font-size: 16px; border-radius: 10px; border: none; background:#ff4da6; color:white; }
+    .used { margin-top: 12px; font-weight: bold; font-size: 20px; display:none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img src="ticket.png" />
+    <button onclick="useTicket()">使用済みにする</button>
+    <div id="used" class="used">✅ 使用済みです</div>
+  </div>
+
+<script>
+function useTicket(){
+  localStorage.setItem("jujan_used","1");
+  document.getElementById("used").style.display="block";
+}
+if(localStorage.getItem("jujan_used")==="1"){
+  document.getElementById("used").style.display="block";
+}
+</script>
+</body>
+</html>
